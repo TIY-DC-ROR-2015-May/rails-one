@@ -8,8 +8,9 @@ class SayController < ApplicationController
   end
 
   def say_things
-    system "say", params[:words]
+    s = Speech.create! words: params[:words]
+    s.perform!
     #flash[:notice] = "Said '#{params[:words]}. Again?"
-    redirect_to say_form_path, notice: "Said '#{params[:words]}. Again?"
+    redirect_to say_form_path, notice: "Said '#{s.words}'. Again?"
   end
 end
