@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'say#welcome'
 
-  get  '/input' => 'say#form'
-  post '/speak' => 'say#say_things'
+  get  '/input' => 'say#form',       as: 'say_form'
+  post '/speak' => 'say#say_things', as: 'speak'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
