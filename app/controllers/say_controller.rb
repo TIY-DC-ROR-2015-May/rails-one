@@ -1,5 +1,6 @@
 class SayController < ApplicationController
   def welcome
+    @recent_speeches = Speech.last 3
     render :home
   end
 

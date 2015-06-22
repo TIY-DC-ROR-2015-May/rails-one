@@ -2,3 +2,9 @@
 <p>It should be obvious how this works</p>
 <!-- <a href="<%= say_form_path %>">Try it out!</a> -->
 <%= link_to "Try it out!", say_form_path, class: "css-class" %>
+
+<ul>
+  <% @recent_speeches.each do |s| %>
+    <li><%= s.words %></li>
+  <% end %>
+</ul>
