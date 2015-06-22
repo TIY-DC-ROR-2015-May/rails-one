@@ -5,6 +5,11 @@
 
 <ul>
   <% @recent_speeches.each do |s| %>
-    <li><%= s.words %></li>
+    <li>
+      <form method="POST" action="<%= speak_path %>">
+        <input type="hidden" name="words" value="<%= s.words %>">
+        <button><%= s.words %></button>
+      </form>
+    </li>
   <% end %>
 </ul>
