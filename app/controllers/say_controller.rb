@@ -1,4 +1,8 @@
 class SayController < ApplicationController
+  def welcome
+    render :home
+  end
+
   def form
     # render :form
   end
