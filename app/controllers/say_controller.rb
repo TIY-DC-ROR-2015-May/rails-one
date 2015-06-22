@@ -5,6 +5,7 @@ class SayController < ApplicationController
 
   def say_things
     system "say", params[:words]
-    redirect_to "/"
+    #flash[:notice] = "Said '#{params[:words]}. Again?"
+    redirect_to "/", notice: "Said '#{params[:words]}. Again?"
   end
 end
